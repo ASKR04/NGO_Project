@@ -1,6 +1,6 @@
 package org.example.ngo_project.Repository;
 
-import com.example.NgoApplication.model.Event;
+import org.example.ngo_project.model.Event;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

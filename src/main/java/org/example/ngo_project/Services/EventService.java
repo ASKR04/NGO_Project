@@ -1,7 +1,7 @@
 package org.example.ngo_project.Services;
 
-import com.example.NgoApplication.Repository.EventRepository;
-import com.example.NgoApplication.model.Event;
+import org.example.ngo_project.Repository.EventRepository;
+import org.example.ngo_project.model.Event;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
