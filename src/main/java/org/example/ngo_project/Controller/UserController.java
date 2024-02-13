@@ -19,14 +19,8 @@ public class UserController {
     private UserService userService;
 
 
-    @CrossOrigin(origins ="http://localhost:3000", maxAge = 3600)
-    @PostMapping("/user")
-    public ResponseEntity<User> createUser(@RequestBody User user) {
-        User createduser = userService.createUser(user);
-        return new ResponseEntity<>(createduser, HttpStatus.CREATED);
-    }
-
-    @GetMapping("/loginuser")
+    @PostMapping("/loginuser")
+    @CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
     public ResponseEntity<AtomicBoolean> getUser(@RequestBody User user) {
         List<User> userList = userService.getAllUsers();
         AtomicBoolean flag = new AtomicBoolean(false);
