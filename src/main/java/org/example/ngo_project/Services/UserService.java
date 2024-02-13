@@ -1,7 +1,7 @@
 package org.example.ngo_project.Services;
 
-import com.example.NgoApplication.Repository.UserRepository;
-import com.example.NgoApplication.model.User;
+import org.example.ngo_project.Repository.UserRepository;
+import org.example.ngo_project.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

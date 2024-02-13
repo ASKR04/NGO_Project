@@ -1,6 +1,6 @@
 package org.example.ngo_project.Controller;
 
-import com.example.NgoApplication.Services.EventService;
+import org.example.ngo_project.Services.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 

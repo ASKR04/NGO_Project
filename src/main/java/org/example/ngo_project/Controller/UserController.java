@@ -1,7 +1,7 @@
 package org.example.ngo_project.Controller;
 
-import com.example.NgoApplication.Services.UserService;
-import com.example.NgoApplication.model.User;
+import org.example.ngo_project.Services.UserService;
+import org.example.ngo_project.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @RestController
+@CrossOrigin("http://localhost:3000")
 /*@RequestMapping("/api/users")*/
 public class UserController {
 
@@ -18,15 +19,8 @@ public class UserController {
     private UserService userService;
 
 
-    @CrossOrigin(origins ="http://localhost:3000", maxAge = 3600)
-    @PostMapping("/user")
-    public ResponseEntity<User> createUser(@RequestBody User user) {
-        User createduser = userService.createUser(user);
-        return new ResponseEntity<>(createduser, HttpStatus.CREATED);
-    }
-
-    @CrossOrigin(origins ="http://localhost:3000")
-    @GetMapping("/loginuser")
+    @PostMapping("/loginuser")
+    @CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
     public ResponseEntity<AtomicBoolean> getUser(@RequestBody User user) {
         List<User> userList = userService.getAllUsers();
         AtomicBoolean flag = new AtomicBoolean(false);

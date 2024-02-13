@@ -1,6 +1,6 @@
 package org.example.ngo_project.Repository;
 
-import com.example.NgoApplication.model.User;
+import org.example.ngo_project.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
