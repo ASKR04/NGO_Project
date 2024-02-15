@@ -12,15 +12,19 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 @RestController
 @CrossOrigin("http://localhost:3000")
-/*@RequestMapping("/api/users")*/
 public class UserController {
 
     @Autowired
     private UserService userService;
 
 
+    @PostMapping("/user")
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        User createduser = userService.createUser(user);
+        return new ResponseEntity<>(createduser, HttpStatus.CREATED);
+    }
+
     @PostMapping("/loginuser")
-    @CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
     public ResponseEntity<AtomicBoolean> getUser(@RequestBody User user) {
         List<User> userList = userService.getAllUsers();
         AtomicBoolean flag = new AtomicBoolean(false);
