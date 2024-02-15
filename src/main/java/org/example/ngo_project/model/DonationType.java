@@ -16,14 +16,13 @@ public class DonationType {
         this.id = id;
     }
 
-    public String getTypeName() {
-        return typeName;
-    }
+    @Enumerated(EnumType.STRING)
+    @Column(name = "Type")
+    private typeName typeName;
 
-    public void setTypeName(String typeName) {
-        this.typeName = typeName;
+    public enum typeName{
+        CASH,CREDIT
     }
-
-    @Column(name = "type_name")
-    private String typeName;
 }
+
+
